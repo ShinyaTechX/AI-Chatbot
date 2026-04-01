@@ -1,33 +1,57 @@
-# True LSTM Chatbot(Sequence Learning)
+# Transformer Chatbot (GPT-style)
 
-A deep learning chatbot built with PyTorch using a true LSTM sequence model(not bag-of-words).
-This project demonstrates how to train a chatbot that understands word order and context using sequence learning.
+A simple web-based chatbot built using a **Transformer model (GPT-2)** with a Flask backend and interactive frontend.
+This project demonstrates how to run a **local language model** and serve it through a web API.
 
 ## Features
-- True LSTM-based sequence modeling
-- Understands word order(context-aware)
-- Custom tokenization + stemming pipeline
-- Padding & batching for sequence input
-- Intent classification with CrossEntropyLoss
-- Easy deployment(CLI/Telegram bot)
-- Clean and minimal architecture for learning
 
-## Model Architecture
-Input -> LSTM -> Fully Connected -> Softmax -> Intent
-- Input size: 1(word index per timestep)
-- Hidden size: 8
-- Output size: Number of intents
-- Loss: CrossEntropyLoss
-- Optimizer: Adam
+- Local GPT-2 model (no API required)
+- Interactive chat interface
+- Maintains conversation context
+- Fast Flask backend
+- Easy to customize and extend
 
-## Data Pipeline
-- Tokenize sentence
-- Apply stemming
-- Convert words -> indices(word2idx)
-- Pad sequences to fixed length
-- Reshape -> (batch, seq_len, input_size)
-- Feed into LSTM
+## Tech Stack
+
+* **Backend:** Python, Flask
+* **Model:** Hugging Face Transformers (GPT-2)
+* **Frontend:** HTML, CSS, JavaScript
+* **Libraries:** PyTorch, Transformers
+
+## How It Works
+
+1. User enters a message in the browser
+2. Frontend sends a POST request to `/chat`
+3. Flask backend processes the input
+4. GPT-2 generates a response
+5. Response is returned as JSON
+6. Frontend displays the reply
+
+---
+
+## Example
+
+**User:** Hello
+**Bot:** Hi! How can I help you today?
+
+## Limitations
+
+* GPT-2 is not optimized for conversation
+* Responses may be:
+
+  * repetitive
+  * off-topic
+  * inconsistent
+
+## License
+
+This project is open-source and available under the MIT License.
+
+## Acknowledgements
+
+* Hugging Face Transformers
+* OpenAI GPT architecture
+* Flask framework
 
 ## Run
-python train_lstm.py
-python chat_lstm.py
+Python app/app.py
