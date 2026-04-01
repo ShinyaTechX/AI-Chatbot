@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 model/*.pth
+model/gpt2/
+app/_app.py

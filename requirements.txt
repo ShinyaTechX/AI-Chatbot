@@ -1,3 +1,7 @@
 torch
 nltk
 numpy
+
+transformers
+torch
+flask
